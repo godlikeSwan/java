@@ -4,11 +4,54 @@
 package oop;
 
 import org.junit.Test;
+
+import jdk.jfr.Timestamp;
+
+import org.junit.After;
+import org.junit.Before;
 import static org.junit.Assert.*;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 public class DogTest {
-    @Test public void testDogBarkMethod() {
-        Dog dog = new Dog();
-        assertEquals(dog.bark(), "bark bark");
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private final PrintStream originalOut = System.out;
+
+    @Before
+    public void setUpStreams () {
+        System.setOut(new PrintStream(outContent));
     }
+
+    @After
+    public void restoreStreams () {
+        outContent.reset();
+        System.setOut(originalOut);
+    }
+
+    @Test
+    public void testDogBarkMethod() {
+        Dog dog = new Dog();
+        dog.bark();
+        assertEquals(outContent.toString(), "bark bark\r\n");
+    }
+
+    Dog d1 = new Dog("Mike", 2);
+    Dog d2 = new Dog("Helen", 7);
+    Dog d3 = new Dog("Bob");
+
+    @Test
+    public void testSetAge () {
+        assertEquals(d1.toString(), "Mike, age 2");
+    }
+
+    @Test
+    public void testIntoHumanAge () {
+        d1.intoHumanAge();
+        d2.intoHumanAge();
+        d3.intoHumanAge();
+        assertEquals(outContent.toString(), "Mike's age in human years is 14 years\r\nHelen's age in human years is 49 years\r\nBob's age in human years is 0 years\r\n");
+    }
+
+
 }
