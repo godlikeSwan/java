@@ -33,7 +33,7 @@ public class DogTest {
     public void testDogBarkMethod() {
         Dog dog = new Dog();
         dog.bark();
-        assertEquals(outContent.toString(), "bark bark\r\n");
+        assertEquals(outContent.toString(), "bark bark");
     }
 
     Dog d1 = new Dog("Mike", 2);
@@ -50,7 +50,7 @@ public class DogTest {
         d1.intoHumanAge();
         d2.intoHumanAge();
         d3.intoHumanAge();
-        assertEquals(outContent.toString(), "Mike's age in human years is 14 years\r\nHelen's age in human years is 49 years\r\nBob's age in human years is 0 years\r\n");
+        assertEquals(outContent.toString(), "Mike's age in human years is 14 yearsHelen's age in human years is 49 yearsBob's age in human years is 0 years");
     }
 
 

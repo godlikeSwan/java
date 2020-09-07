@@ -43,10 +43,10 @@ public class Dog {
     }
 
     public void intoHumanAge () {
-        System.out.println(getName() + "'s age in human years is " + age * 7 + " years");
+        System.out.print(getName() + "'s age in human years is " + age * 7 + " years");
     }
 
     public void bark () {
-        System.out.println("bark bark");
+        System.out.print("bark bark");
     }
 }
