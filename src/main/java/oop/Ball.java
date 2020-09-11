@@ -42,4 +42,38 @@ public class Ball {
   public void stop () {
     v = 0.0;
   }
+
+  public void setX (Double x) {
+    this.x = x;
+  }
+
+  public Double getX () {
+    return this.x;
+  }
+
+  public void setY (Double y) {
+    this.y = y;
+  }
+
+  public Double getY () {
+    return this.y;
+  }
+
+  public void setXY (Double x, Double y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  public Double[] getXY () {
+    Double[] xy = { this.x, this.y };
+    return xy;
+  }
+
+  public Boolean isMoving () {
+    return this.v != 0;
+  }
+
+  public String printInfo () {
+    return "x: " + this.x + " y: " + this.y + " v: " + this.v + " r: " + this.r + " color: " + this.color;
+  }
 }
