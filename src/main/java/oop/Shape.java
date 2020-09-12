@@ -1,7 +1,7 @@
 package oop;
 
 public class Shape {
-    Stirng name;
+    String name;
     int numberOfLines;
     int P;
     int S;
