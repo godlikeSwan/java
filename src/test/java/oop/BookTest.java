@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-public class DogTest {
+public class BookTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
 
@@ -27,29 +27,28 @@ public class DogTest {
         System.setOut(originalOut);
     }
 
+    /**
+     * Tests
+     */
     @Test
-    public void testDogBarkMethod() {
-        Dog dog = new Dog();
-        dog.bark();
-        assertEquals(outContent.toString(), "bark bark");
-    }
+    public void testBookConstructor () {
+        Book book = new Book();
+        assertEquals(book.toString(), "Book; author: Anonimus; 10 pages");
 
-    Dog d1 = new Dog("Mike", 2);
-    Dog d2 = new Dog("Helen", 7);
-    Dog d3 = new Dog("Bob");
-
-    @Test
-    public void testSetAge () {
-        assertEquals(d1.toString(), "Mike, age 2");
+        Book book1 = new Book("Math", "Albert Einstein", 1325);
+        assertEquals(book1.toString(), "Math; author: Albert Einstein; 1325 pages");
     }
 
     @Test
-    public void testIntoHumanAge () {
-        d1.intoHumanAge();
-        d2.intoHumanAge();
-        d3.intoHumanAge();
-        assertEquals(outContent.toString(), "Mike's age in human years is 14 yearsHelen's age in human years is 49 yearsBob's age in human years is 0 years");
+    public void testPagesMethods () {
+        Book book = new Book();
+        assertEquals(book.getCurrentPage(), 1);
+
+        book.flip();
+        assertEquals(book.flip(), 3);
+        assertEquals(book.getCurrentPage(), 3);
+
+        book.setCurrentPage(8);
+        assertEquals(book.getCurrentPage(), 8);
     }
-
-
 }

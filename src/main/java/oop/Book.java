@@ -7,23 +7,26 @@ public class Book {
   int currentPage;
 
   public Book () {
-    name = "Book";
-    author = "Anonimus";
-    numberOfPages = 10;
-    currentPage = 0;
+    this("Book", "Anonimus", 10);
   }
 
   public Book (String name, String author, int numberOfPages) {
     this.name = name;
     this.author = author;
     this.numberOfPages = numberOfPages;
-    currentPage = 0;
+    currentPage = 1;
   }
 
+  /**
+   * If you change name it will be another book.
+   */
   public String getName () {
     return this.name;
   }
 
+  /**
+   * same as a name (see the {@link #getName() getName} method).
+   */
   public String getAuthor () {
     return this.author;
   }
@@ -43,5 +46,10 @@ public class Book {
   public int flip () {
     this.currentPage += 1;
     return this.currentPage;
+  }
+
+  @Override
+  public String toString () {
+    return getName() + "; author: " + getAuthor() + "; " + getNumberOfPages() + " pages";
   }
 }
