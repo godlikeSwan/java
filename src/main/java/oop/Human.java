@@ -42,6 +42,6 @@ public class Human {
 
   @Override
   public String toString() {
-    return name + " height: " + getHeight() + "; weight: " + getWeight();
+    return name + "; height: " + getHeight() + "; weight: " + getWeight();
   }
 }
