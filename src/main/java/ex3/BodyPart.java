@@ -1,4 +1,4 @@
-package oop;
+package ex3;
 
 public abstract class BodyPart {
   Double weight;

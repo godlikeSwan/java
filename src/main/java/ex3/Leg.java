@@ -1,4 +1,4 @@
-package oop;
+package ex3;
 
 public class Leg extends BodyPart {
   public Leg () {

@@ -1,4 +1,4 @@
-package func;
+package ex1;
 
 public class Harmonics {
     public static void main (String[] args) {

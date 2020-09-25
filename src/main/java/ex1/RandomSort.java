@@ -1,4 +1,4 @@
-package func;
+package ex1;
 
 import java.util.*;
 public class RandomSort {

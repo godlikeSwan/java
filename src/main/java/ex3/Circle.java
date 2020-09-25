@@ -1,4 +1,4 @@
-package oop;
+package ex3;
 
 public class Circle {
     Double r;

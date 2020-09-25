@@ -1,4 +1,4 @@
-package oop;
+package ex2;
 
 public class Shape {
     String name;

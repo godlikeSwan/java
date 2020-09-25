@@ -1,4 +1,4 @@
-package func;
+package ex1;
 
 public class PrintArgs {
     public static void main (String[] args) {
